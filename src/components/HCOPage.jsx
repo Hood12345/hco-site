@@ -142,7 +142,7 @@ export default function HCOPage() {
           <div className="bg-zinc-900 p-8 rounded-2xl max-w-xl w-full relative shadow-2xl text-sm">
             <h2 className="text-2xl font-bold mb-4">Submit Your Clip</h2>
             <p className="mb-2 text-gray-300 text-xs italic">
-              Your clip will be submitted to Collab Inc., our trusted content licensing partner.
+              Your clip will be submitted to HCO Inc.
             </p>
             <form className="space-y-4">
               <div className="grid grid-cols-2 gap-4">
@@ -183,7 +183,7 @@ export default function HCOPage() {
               <textarea placeholder="Digital Signature" className="w-full p-3 h-16 rounded-lg bg-zinc-800 text-white placeholder-gray-400"></textarea>
 
               <p className="text-xs text-gray-400 leading-snug">
-                *By signing, you confirm the information above is accurate and grant an exclusive license to Collab for representation. No guarantee of revenue unless licensed by a third party. You agree to the Contest Rules, Submission Agreement, Terms of Service, and Privacy Policy.
+                *By signing, you confirm the information above is accurate and grant an exclusive license to HCO for representation. No guarantee of revenue unless licensed by a third party. You agree to the Contest Rules, Submission Agreement, Terms of Service, and Privacy Policy.
               </p>
 
               <label className="flex items-center gap-2 mt-2">
@@ -195,7 +195,7 @@ export default function HCOPage() {
             </form>
             <div className="mt-6 p-4 text-center text-xs bg-zinc-800 rounded-xl border border-zinc-700">
               <span className="text-gray-300">In partnership with</span>
-              <div className="text-red-500 font-bold text-sm mt-1">Collab Inc.</div>
+              <div className="text-red-500 font-bold text-sm mt-1">HCO Inc.</div>
             </div>
             <button onClick={() => setShowSubmitForm(false)} className="absolute top-3 right-4 text-gray-400 hover:text-white text-xl">&times;</button>
           </div>
