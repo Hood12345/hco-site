@@ -1,10 +1,10 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import './index.css'
-import HCOPage from './HCOPage'
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import App from './App';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <HCOPage />
-  </React.StrictMode>,
-)
+    <App />
+  </React.StrictMode>
+);
