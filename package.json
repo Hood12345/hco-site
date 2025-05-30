@@ -1,0 +1,4 @@
+npm create vite@latest
+# choose React + JavaScript
+# cd into the folder and run:
+npm install
