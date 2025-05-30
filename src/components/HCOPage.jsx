@@ -31,7 +31,11 @@ export default function HCOPage() {
       {/* Hero */}
       <section className="relative flex flex-col items-center justify-center text-center py-40 px-4 overflow-hidden bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-zinc-900 via-black to-zinc-800">
         <div className="absolute inset-0 bg-[radial-gradient(circle,rgba(255,255,255,0.05),transparent_70%)] animate-pulse"></div>
-        <h1 className="text-7xl font-black text-white tracking-tight drop-shadow-[0_4px_20px_rgba(255,0,0,0.4)] z-10">HoodClipsOfficials</h1>
+        <img
+          src="/hood.png"
+          alt="HoodClipsOfficials Logo"
+          className="h-24 w-auto z-10 drop-shadow-[0_4px_20px_rgba(255,0,0,0.4)]"
+        />
         <p className="mt-6 text-2xl text-gray-300 max-w-2xl z-10">
           We’re experts in algorithm comprehension and viral momentum — engineering content that breaks the feed.
         </p>
