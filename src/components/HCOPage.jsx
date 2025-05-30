@@ -9,7 +9,13 @@ export default function HCOPage() {
       {/* Navbar */}
       <header className="fixed w-full top-0 left-0 bg-zinc-900 z-50 shadow-md">
         <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
-          <div className="text-2xl font-bold text-white">HCO</div>
+          <a href="/" className="flex items-center">
+            <img
+              src="/hood.png"
+              alt="HCO Logo"
+              className="h-10 w-auto object-contain"
+            />
+          </a>
           <nav className="hidden md:flex gap-8 text-sm font-semibold">
             <a href="#" className="text-gray-300 hover:text-white transition">Home</a>
             <a href="#" className="text-gray-300 hover:text-white transition">Culture</a>
@@ -21,7 +27,7 @@ export default function HCOPage() {
       </header>
 
       <div className="h-20"></div>
-
+      
       {/* Hero */}
       <section className="relative flex flex-col items-center justify-center text-center py-40 px-4 overflow-hidden bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-zinc-900 via-black to-zinc-800">
         <div className="absolute inset-0 bg-[radial-gradient(circle,rgba(255,255,255,0.05),transparent_70%)] animate-pulse"></div>
