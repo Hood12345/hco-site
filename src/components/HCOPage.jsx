@@ -8,8 +8,8 @@ export default function HCOPage() {
     <div className="min-h-screen bg-gradient-to-br from-zinc-900 via-neutral-900 to-zinc-800 text-white font-sans scroll-smooth">
       {/* Navbar */}
       <header className="fixed w-full top-0 left-0 bg-zinc-900 z-50 shadow-md">
-        <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
-          <a href="/" className="flex items-center">
+        <div className="max-w-7xl mx-auto flex items-center justify-between pl-4 pr-6 py-4">
+          <a href="/" className="flex items-center ml-0">
             <img
               src="/hood.png"
               alt="HCO Logo"
@@ -17,9 +17,6 @@ export default function HCOPage() {
             />
           </a>
           <nav className="hidden md:flex gap-8 text-sm font-semibold">
-            <a href="#" className="text-gray-300 hover:text-white transition">Home</a>
-            <a href="#" className="text-gray-300 hover:text-white transition">Culture</a>
-            <a href="#" className="text-gray-300 hover:text-white transition">Why Us</a>
             <a href="#" className="text-gray-300 hover:text-white transition" onClick={() => setShowBrandForm(true)}>Work With Us</a>
             <a href="#" className="text-gray-300 hover:text-white transition" onClick={() => setShowSubmitForm(true)}>Submit Clip</a>
           </nav>
@@ -97,7 +94,7 @@ export default function HCOPage() {
           <div>
             <h4 className="text-xl font-semibold mb-4">About HCO</h4>
             <p className="text-sm text-gray-400">
-              HoodClipsOfficials is a next-gen media company fueling digital culture. We blend AI-assisted virality with community-driven content to redefine online entertainment.
+              Hoodclipsofficials is a next-gen media company fueling digital culture. We blend AI-assisted virality with community-driven content to redefine online entertainment.
             </p>
           </div>
           <div>
@@ -126,7 +123,7 @@ export default function HCOPage() {
       </section>
 
       <div className="bg-zinc-950 text-center text-xs text-gray-500 py-4">
-        © {new Date().getFullYear()} HoodClipsOfficials. All rights reserved.
+        © {new Date().getFullYear()} Hoodclipsofficials. All rights reserved.
       </div>
 
       {/* Modals */}
