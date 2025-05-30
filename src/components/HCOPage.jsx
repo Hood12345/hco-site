@@ -1,8 +1,13 @@
+// HCOPage.jsx — Full Site Restored with Enhanced Submit Form
+
 import { useState } from 'react';
 
 export default function HCOPage() {
   const [showBrandForm, setShowBrandForm] = useState(false);
   const [showSubmitForm, setShowSubmitForm] = useState(false);
+  const [showDescription, setShowDescription] = useState(false);
+  const [recorded, setRecorded] = useState('');
+  const [wantsCredit, setWantsCredit] = useState('');
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-zinc-900 via-neutral-900 to-zinc-800 text-white font-sans scroll-smooth">
@@ -54,14 +59,10 @@ export default function HCOPage() {
           @hoodclipsofficials curates the internet’s most viral clips — spotlighting culture, chaos, and creators. We don’t just follow trends. We ignite them.
         </p>
         <div className="mt-16 grid md:grid-cols-3 gap-8">
-          {[
-            { title: "100% Organic Virality", text: "No bots. Just content that hits. We know what people stop and watch." },
-            { title: "AI-Assisted Curation", text: "We use cutting-edge AI tools to spot trends before they break." },
-            { title: "Trusted by Music & Media", text: "We partner with labels, streamers & platforms to amplify releases." }
-          ].map((item, i) => (
+          {["100% Organic Virality", "AI-Assisted Curation", "Trusted by Music & Media"].map((title, i) => (
             <div key={i} className="bg-gradient-to-br from-zinc-900 to-neutral-800 rounded-3xl p-6 shadow-2xl hover:shadow-red-500/50 hover:scale-105 transition transform">
-              <h3 className="text-xl font-semibold text-white mb-2">{item.title}</h3>
-              <p className="text-gray-300">{item.text}</p>
+              <h3 className="text-xl font-semibold text-white mb-2">{title}</h3>
+              <p className="text-gray-300">We know what people stop and watch. No bots. Just hits.</p>
             </div>
           ))}
         </div>
@@ -71,18 +72,13 @@ export default function HCOPage() {
       <section className="py-32 px-6 bg-gradient-to-br from-zinc-900 via-neutral-900 to-zinc-800 text-center">
         <h2 className="text-4xl font-bold mb-6">Why Brands Love Us</h2>
         <p className="text-lg text-gray-300 max-w-2xl mx-auto mb-10">
-          We deliver scroll-stopping content, speed, and cultural relevance. Our creative team moves faster than trends — delivering campaigns that matter.
+          We deliver scroll-stopping content, speed, and cultural relevance.
         </p>
         <div className="grid md:grid-cols-2 gap-10 max-w-4xl mx-auto">
-          {[
-            ["End-to-End Production", "From content ideation to delivery — we handle storytelling that converts."],
-            ["Real-Time Performance", "We track, analyze, and optimize every campaign for max visibility."],
-            ["Amplified Distribution", "Content reaches not just our platform — but our extended creator network."],
-            ["Strategic Collabs", "We craft win-win brand integrations that feel natural and perform."]
-          ].map(([title, text], i) => (
+          {["End-to-End Production", "Real-Time Performance", "Amplified Distribution", "Strategic Collabs"].map((title, i) => (
             <div key={i} className="bg-gradient-to-br from-zinc-800 to-neutral-800 p-6 rounded-2xl shadow-2xl hover:shadow-red-500/50 hover:scale-105 transform transition">
               <h3 className="text-xl font-semibold">{title}</h3>
-              <p className="text-gray-300 mt-2">{text}</p>
+              <p className="text-gray-300 mt-2">We craft win-win content integrations that perform.</p>
             </div>
           ))}
         </div>
@@ -94,15 +90,14 @@ export default function HCOPage() {
           <div>
             <h4 className="text-xl font-semibold mb-4">About HCO</h4>
             <p className="text-sm text-gray-400">
-              Hoodclipsofficials is a next-gen media company fueling digital culture. We blend AI-assisted virality with community-driven content to redefine online entertainment.
+              Hoodclipsofficials is a next-gen media company blending AI-assisted virality with community-driven content.
             </p>
           </div>
           <div>
             <h4 className="text-xl font-semibold mb-4">Quick Links</h4>
             <ul className="text-sm text-gray-400 space-y-2">
-              <li><a href="#" className="hover:text-white">Home</a></li>
-              <li><a href="#" onClick={() => setShowBrandForm(true)} className="hover:text-white">Work With Us</a></li>
-              <li><a href="#" onClick={() => setShowSubmitForm(true)} className="hover:text-white">Submit Your Clip</a></li>
+              <li><a href="#" className="hover:text-white" onClick={() => setShowBrandForm(true)}>Work With Us</a></li>
+              <li><a href="#" className="hover:text-white" onClick={() => setShowSubmitForm(true)}>Submit Your Clip</a></li>
               <li><a href="https://www.instagram.com/hoodclipsofficials/" target="_blank" rel="noopener noreferrer" className="hover:text-white">Instagram</a></li>
             </ul>
           </div>
@@ -121,12 +116,11 @@ export default function HCOPage() {
           </div>
         </div>
       </section>
-
       <div className="bg-zinc-950 text-center text-xs text-gray-500 py-4">
         © {new Date().getFullYear()} Hoodclipsofficials. All rights reserved.
       </div>
 
-      {/* Modals */}
+      {/* Work With Us Modal */}
       {showBrandForm && (
         <div className="fixed inset-0 bg-black bg-opacity-70 z-50 flex items-center justify-center px-4">
           <div className="bg-zinc-900 p-8 rounded-2xl max-w-lg w-full relative shadow-2xl">
@@ -142,16 +136,67 @@ export default function HCOPage() {
         </div>
       )}
 
+      {/* Submit Clip Modal Enhanced */}
       {showSubmitForm && (
-        <div className="fixed inset-0 bg-black bg-opacity-70 z-50 flex items-center justify-center px-4">
-          <div className="bg-zinc-900 p-8 rounded-2xl max-w-lg w-full relative shadow-2xl">
+        <div className="fixed inset-0 bg-black bg-opacity-70 z-50 flex items-center justify-center px-4 overflow-y-auto py-10">
+          <div className="bg-zinc-900 p-8 rounded-2xl max-w-xl w-full relative shadow-2xl text-sm">
             <h2 className="text-2xl font-bold mb-4">Submit Your Clip</h2>
+            <p className="mb-2 text-gray-300 text-xs italic">
+              Your clip will be submitted to Collab Inc., our trusted content licensing partner.
+            </p>
             <form className="space-y-4">
-              <input type="text" placeholder="Your Name or IG Handle" className="w-full p-3 rounded-lg bg-zinc-800 text-white placeholder-gray-400" />
-              <input type="url" placeholder="Video URL" className="w-full p-3 rounded-lg bg-zinc-800 text-white placeholder-gray-400" />
-              <textarea placeholder="Optional message" className="w-full p-3 h-24 rounded-lg bg-zinc-800 text-white placeholder-gray-400"></textarea>
-              <button type="submit" className="w-full bg-red-600 hover:bg-red-500 text-white py-3 rounded-xl font-semibold">Send Clip</button>
+              <div className="grid grid-cols-2 gap-4">
+                <input type="text" placeholder="First Name *" className="p-3 rounded-lg bg-zinc-800 text-white placeholder-gray-400" />
+                <input type="text" placeholder="Last Name *" className="p-3 rounded-lg bg-zinc-800 text-white placeholder-gray-400" />
+              </div>
+              <input type="email" placeholder="Email *" className="w-full p-3 rounded-lg bg-zinc-800 text-white placeholder-gray-400" />
+              <input type="url" placeholder="Paste a Link or Choose a File" className="w-full p-3 rounded-lg bg-zinc-800 text-white placeholder-gray-400" />
+              <input type="text" placeholder="Where was this filmed?" className="w-full p-3 rounded-lg bg-zinc-800 text-white placeholder-gray-400" />
+
+              <div>
+                <label className="block text-sm text-gray-300 mb-1">Add clip description? (optional)</label>
+                <select value={showDescription} onChange={(e) => setShowDescription(e.target.value === 'Yes')} className="w-full p-2 rounded bg-zinc-800 text-white">
+                  <option>No</option>
+                  <option>Yes</option>
+                </select>
+                {showDescription && (
+                  <textarea placeholder="Tell us about your clip" className="mt-2 w-full p-3 h-20 rounded-lg bg-zinc-800 text-white placeholder-gray-400"></textarea>
+                )}
+              </div>
+
+              <div>
+                <label className="block text-sm text-gray-300 mb-1">Did you record this clip?</label>
+                <select value={recorded} onChange={(e) => setRecorded(e.target.value)} className="w-full p-2 rounded bg-zinc-800 text-white">
+                  <option>No</option>
+                  <option>Yes</option>
+                </select>
+              </div>
+
+              <div>
+                <label className="block text-sm text-gray-300 mb-1">Want clip credit? (optional)</label>
+                <select value={wantsCredit} onChange={(e) => setWantsCredit(e.target.value)} className="w-full p-2 rounded bg-zinc-800 text-white">
+                  <option>No</option>
+                  <option>Yes</option>
+                </select>
+              </div>
+
+              <textarea placeholder="Digital Signature" className="w-full p-3 h-16 rounded-lg bg-zinc-800 text-white placeholder-gray-400"></textarea>
+
+              <p className="text-xs text-gray-400 leading-snug">
+                *By signing, you confirm the information above is accurate and grant an exclusive license to Collab for representation. No guarantee of revenue unless licensed by a third party. You agree to the Contest Rules, Submission Agreement, Terms of Service, and Privacy Policy.
+              </p>
+
+              <label className="flex items-center gap-2 mt-2">
+                <input type="checkbox" className="accent-red-600" />
+                <span className="text-gray-300 text-xs">Keep me in the know about all things Hoodclips.</span>
+              </label>
+
+              <button type="submit" className="w-full bg-red-600 hover:bg-red-500 text-white py-3 rounded-xl font-semibold">Submit Clip</button>
             </form>
+            <div className="mt-6 p-4 text-center text-xs bg-zinc-800 rounded-xl border border-zinc-700">
+              <span className="text-gray-300">In partnership with</span>
+              <div className="text-red-500 font-bold text-sm mt-1">Collab Inc.</div>
+            </div>
             <button onClick={() => setShowSubmitForm(false)} className="absolute top-3 right-4 text-gray-400 hover:text-white text-xl">&times;</button>
           </div>
         </div>
