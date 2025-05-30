@@ -59,9 +59,9 @@ export default function HCOPage() {
       {/* Partner Banner */}
       <section className="overflow-hidden bg-zinc-800 py-6 border-y border-zinc-700">
         <div className="animate-marquee whitespace-nowrap text-center">
-          <span className="text-white font-semibold text-sm mx-8">Partnered with <span className="text-red-500">COLLAB INC.</span></span>
-          <span className="text-white font-semibold text-sm mx-8">Partnered with <span className="text-red-500">COLLAB INC.</span></span>
-          <span className="text-white font-semibold text-sm mx-8">Partnered with <span className="text-red-500">COLLAB INC.</span></span>
+          <span className="text-white font-semibold text-sm mx-8">Partnered with <span className="text-red-500">HCO INC.</span></span>
+          <span className="text-white font-semibold text-sm mx-8">Partnered with <span className="text-red-500">HCO INC.</span></span>
+          <span className="text-white font-semibold text-sm mx-8">Partnered with <span className="text-red-500">HCO INC.</span></span>
         </div>
       </section>
 
